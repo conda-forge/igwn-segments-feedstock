@@ -35,14 +35,13 @@ test:
   requires:
     - pip
     - pytest
-    - make  # [not win and not py>=313]
     - python-lal  # [not win and not py>=313]
   commands:
     # run_test.py contains sanity checks for all platforms
     # check requirements
     - python -m pip check
     # run tests (only where we can install LAL)
-    - make -C test check  # [not win and not py>=313]
+    - python -m pytest test  # [not win and not py>=313]
 
 about:
   home: https://git.ligo.org/computing/software/igwn-segments/
