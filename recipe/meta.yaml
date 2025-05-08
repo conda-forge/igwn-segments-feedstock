@@ -1,5 +1,5 @@
 {% set name = "igwn-segments" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/i/igwn-segments/igwn_segments-{{ version }}.tar.gz
-  sha256: c1ea58c1d7656c99ae1d3a1db260a98f2f846ce7f0b22933050df7f6057492c4
+  sha256: 71931772a6af0f581a252cab84c7f2a696a219c71c5e5750682353d651f23229
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [python_impl != 'cpython']
 
@@ -24,7 +24,7 @@ requirements:
   host:
     - pip
     - python
-    - setuptools >=64
+    - setuptools >=70.0.0
     - setuptools-scm >=8
   run:
     - python
@@ -34,15 +34,14 @@ test:
     - test/
   requires:
     - pip
-    - pytest
-    - make  # [not win and not py>=313]
-    - python-lal  # [not win and not py>=313]
+    - pytest >=3.9.1
+    - python-lal  # [not win and not py>=314]
   commands:
-    # run_test.py contains sanity checks for all platforms
     # check requirements
     - python -m pip check
-    # run tests (only where we can install LAL)
-    - make -C test check  # [not win and not py>=313]
+    - python -m pip show igwn-segments
+    # run tests
+    - python -m pytest test
 
 about:
   home: https://git.ligo.org/computing/software/igwn-segments/
