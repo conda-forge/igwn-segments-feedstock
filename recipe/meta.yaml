@@ -24,7 +24,7 @@ requirements:
   host:
     - pip
     - python
-    - setuptools >=64
+    - setuptools >=70.0.0
     - setuptools-scm >=8
   run:
     - python
@@ -34,14 +34,14 @@ test:
     - test/
   requires:
     - pip
-    - pytest
-    - python-lal  # [not win and not py>=313]
+    - pytest >=3.9.1
+    - python-lal  # [not win and not py>=314]
   commands:
-    # run_test.py contains sanity checks for all platforms
     # check requirements
     - python -m pip check
-    # run tests (only where we can install LAL)
-    - python -m pytest test  # [not win and not py>=313]
+    - python -m pip show igwn-segments
+    # run tests
+    - python -m pytest test
 
 about:
   home: https://git.ligo.org/computing/software/igwn-segments/
