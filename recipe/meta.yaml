@@ -1,5 +1,5 @@
 {% set name = "igwn-segments" %}
-{% set version = "2.1.0" %}
+{% set version = "2.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/i/igwn-segments/igwn_segments-{{ version }}.tar.gz
-  sha256: 71931772a6af0f581a252cab84c7f2a696a219c71c5e5750682353d651f23229
+  sha256: 672814d78f5de7582b5f39189cdc6016d7ffde95d2b8b8b8b82aa9b45e53f3dd
 
 build:
   number: 0
