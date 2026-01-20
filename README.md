@@ -16,7 +16,6 @@ Documentation: https://igwn-segments.readthedocs.io/
 This module defines the segment and segmentlist objects, as well as the
 infinity object used to define semi-infinite and infinite segments.
 
-
 Current build status
 ====================
 
