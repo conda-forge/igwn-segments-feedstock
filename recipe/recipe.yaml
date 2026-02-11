@@ -13,7 +13,7 @@ source:
   sha256: 672814d78f5de7582b5f39189cdc6016d7ffde95d2b8b8b8b82aa9b45e53f3dd
 
 build:
-  number: 0
+  number: 1
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip:
     - "python_impl != 'cpython'"
@@ -43,8 +43,6 @@ tests:
       run:
         - pip
         - pytest >=3.9.1
-        - if: not win and not match(python, ">=3.14")
-          then: python-lal
     script:
       - python -m pip check
       - python -m pip show igwn-segments
