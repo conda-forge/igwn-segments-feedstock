@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: igwn-segments
-  version: 2.1.1
+  version: "2.1.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/i/igwn-segments/igwn_segments-${{ version }}.tar.gz
-  sha256: 672814d78f5de7582b5f39189cdc6016d7ffde95d2b8b8b8b82aa9b45e53f3dd
+  sha256: 0825469553a6d189044930152bde6bfa4497460a7c87199b507a7b493bde4efb
 
 build:
-  number: 3
+  number: 0
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip:
     - "python_impl != 'cpython'"
