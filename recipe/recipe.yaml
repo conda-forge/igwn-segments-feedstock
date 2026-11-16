@@ -13,7 +13,7 @@ source:
   sha256: 0825469553a6d189044930152bde6bfa4497460a7c87199b507a7b493bde4efb
 
 build:
-  number: 0
+  number: 1
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip:
     - "python_impl != 'cpython'"
